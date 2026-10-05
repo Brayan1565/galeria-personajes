@@ -1,16 +1,47 @@
-# React + Vite
+# Galería de personajes de Rick and Morty
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Aplicación web hecha con **React** y **Vite** que consume la API pública de [Rick and Morty](https://rickandmortyapi.com/) para explorar a los personajes de la serie.
 
-Currently, two official plugins are available:
+## Funcionalidades
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Galería de personajes en cuadrícula responsive
+- Búsqueda por nombre con *debounce* (espera a que dejes de escribir para consultar la API)
+- Filtro por estado: Alive, Dead o Unknown
+- Paginación con botones Anterior y Siguiente
+- Ventana de detalle con especie, género, origen, ubicación y episodios; se cierra con la ✕, haciendo clic fuera o con la tecla Esc
+- Manejo de estados de carga, errores y búsquedas sin resultados
 
-## React Compiler
+## Tecnologías
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React (hooks: `useState` y `useEffect`)
+- Vite
+- CSS (Grid y Flexbox)
+- API REST de Rick and Morty
 
-## Expanding the Oxlint configuration
+## Cómo ejecutarlo
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+1. Clona el repositorio:
+```bash
+   git clone https://github.com/Brayan1565/galeria-personajes.git
+```
+2. Entra a la carpeta e instala las dependencias:
+```bash
+   cd galeria-personajes
+   npm install
+```
+3. Inicia el servidor de desarrollo:
+```bash
+   npm run dev
+```
+4. Abre en el navegador la dirección que muestre la terminal (normalmente `http://localhost:5173`).
+
+## Estructura
+
+```
+src/
+├── components/
+│   ├── Tarjeta.jsx   # tarjeta de cada personaje
+│   └── Modal.jsx     # ventana de detalle
+├── App.jsx           # estado, llamadas a la API y búsqueda/filtro/paginación
+└── App.css           # estilos
+```
