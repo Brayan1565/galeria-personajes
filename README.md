@@ -1,4 +1,5 @@
 # Galería de personajes de Rick and Morty
+🔗 **Demo en vivo:** [galeria-personajes.vercel.app](https://galeria-personajes-seven.vercel.app)
 
 Aplicación web hecha con **React** y **Vite** que consume la API pública de [Rick and Morty](https://rickandmortyapi.com/) para explorar a los personajes de la serie.
 
