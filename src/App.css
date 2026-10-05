@@ -1,0 +1,148 @@
+/* Contenedor de todas las tarjetas: una cuadrícula responsive */
+.galeria {
+  display: grid;
+  /* Crea tantas columnas de mínimo 200px como quepan en la pantalla */
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;            /* espacio entre tarjetas */
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;       /* centra la galería en la página */
+}
+
+/* Cada tarjeta individual */
+.tarjeta {
+  border-radius: 12px;
+  overflow: hidden;     /* recorta la imagen para que respete las esquinas redondeadas */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  background: #fff;
+}
+
+/* La imagen ocupa todo el ancho de la tarjeta */
+.tarjeta img {
+  width: 100%;
+  display: block;       /* quita el pequeño hueco que deja una imagen inline */
+}
+
+.tarjeta h3 {
+  margin: 12px 0 4px;
+  color: #333;
+}
+
+.tarjeta p {
+  margin: 0 0 12px;
+  color: #666;
+}
+
+/* Botones Anterior / Siguiente centrados debajo de la galería */
+.paginacion {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  padding: 20px;
+}
+
+.paginacion button {
+  padding: 8px 16px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  background: #333;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Botón apagado cuando no se puede avanzar o retroceder */
+.paginacion button:disabled {
+  background: #bbb;
+  cursor: not-allowed;
+} 
+
+/* Las tarjetas ahora son clicables: cambiamos el cursor y añadimos un efecto al pasar el mouse */
+.tarjeta {
+  cursor: pointer;
+  transition: transform 0.15s;
+}
+
+.tarjeta:hover {
+  transform: translateY(-4px);
+}
+
+/* Fondo oscuro que cubre toda la pantalla */
+.modal-fondo {
+  position: fixed;      /* se queda fijo aunque hagas scroll */
+  inset: 0;             /* equivale a top, right, bottom y left en 0 */
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;  /* centra el modal en la pantalla */
+  padding: 20px;
+  z-index: 10;          /* lo pone por encima del resto */
+}
+
+/* Caja blanca con la información */
+.modal {
+  position: relative;   /* permite ubicar el botón de cerrar dentro de ella */
+  background: #fff;
+  border-radius: 12px;
+  max-width: 400px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;     /* si el contenido es largo, hace scroll dentro del modal */
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+.modal img {
+  width: 100%;
+  display: block;
+  border-radius: 12px 12px 0 0;
+}
+
+.modal h2 {
+  margin: 16px 0 8px;
+  color: #333;
+}
+
+.modal ul {
+  list-style: none;
+  padding: 0 20px;
+  margin: 0;
+  text-align: left;
+  color: #555;
+}
+
+.modal li {
+  padding: 6px 0;
+  border-bottom: 1px solid #eee;
+}
+
+/* Botón ✕ en la esquina superior derecha */
+.modal-cerrar {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 32px;
+  height: 32px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* Lista desplegable de estado, centrada debajo del buscador */
+.filtro {
+  display: block;
+  width: 100%;
+  max-width: 400px;
+  margin: 12px auto 0;
+  padding: 10px 14px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-sizing: border-box;
+  background: #fff;
+}
